@@ -51,6 +51,7 @@ import { FilterPipeComponent } from './filter-pipe/filter-pipe.component';
 import { TempFormComponent } from './temp-form/temp-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { CardsModule } from './cards/cards.module';
+import { ManageProductComponent } from './product/manage-product/manage-product.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { CardsModule } from './cards/cards.module';
     FilterPipe,
     FilterPipeComponent,
     TempFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ManageProductComponent
   ],
   imports: [
     BrowserModule,

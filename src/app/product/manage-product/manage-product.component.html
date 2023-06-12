@@ -1,0 +1,60 @@
+<section class="my-5">
+    <h2 class="text-center text-primary">Manage Product</h2>
+    <div class="row mx-4">
+        <div class="col-md-6">
+            <h3 class="text-primary my-4">Add Products</h3>
+            <form #manageProdForm="ngForm" (ngSubmit)="addProduct(manageProdForm)">
+                <div class="mb-3">
+                    <label for="productId" class="form-label">Product ID</label>
+                    <input type="text" class="form-control" id="productId" aria-describedby="uniqueProduct">
+                    <div id="uniqueProduct" class="form-text">Product ID should always be unique.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="productName" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="productName">
+                </div>
+                <div class="mb-3">
+                    <label for="productPrice" class="form-label">Product Price</label>
+                    <input type="text" class="form-control" id="productPrice">
+                </div>
+                <div class="d-flex">
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                    <button type="submit" class="btn btn-success mx-3">Save Product</button>
+                    <button type="submit" class="btn btn-warning">Delete Product</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-primary my-4">Manage Products</h3>
+            <table class="table table-hover mt-5">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
