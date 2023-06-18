@@ -52,6 +52,8 @@ import { TempFormComponent } from './temp-form/temp-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { CardsModule } from './cards/cards.module';
 import { ManageProductComponent } from './product/manage-product/manage-product.component';
+import { ManageUserComponent } from './product/manage-user/manage-user.component';
+import { ProductServiceService } from './product/services/pServices/product-service.service';
 
 @NgModule({
   declarations: [
@@ -98,7 +100,8 @@ import { ManageProductComponent } from './product/manage-product/manage-product.
     FilterPipeComponent,
     TempFormComponent,
     ReactiveFormComponent,
-    ManageProductComponent
+    ManageProductComponent,
+    ManageUserComponent
   ],
   imports: [
     BrowserModule,
@@ -108,7 +111,7 @@ import { ManageProductComponent } from './product/manage-product/manage-product.
     HttpClientModule,
     CardsModule
   ],
-  providers: [DesignUtilityService],
+  providers: [DesignUtilityService, ProductServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

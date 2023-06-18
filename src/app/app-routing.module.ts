@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ParentComponent } from './parent/parent.component';
 import { LaptopComponent } from './product/laptop/laptop.component';
 import { ManageProductComponent } from './product/manage-product/manage-product.component';
+import { ManageUserComponent } from './product/manage-user/manage-user.component';
 import { MobileComponent } from './product/mobile/mobile.component';
 import { ProductComponent } from './product/product.component';
 import { TelevisionComponent } from './product/television/television.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path: 'temp-form', component: TempFormComponent},
   {path: 'reactive-form', component: ReactiveFormComponent},
   {path: 'manage-product', component: ManageProductComponent},
+  {path: 'manage-user', component: ManageUserComponent},
   {path:'**', component:PageNotFoundComponent}
 ];
 

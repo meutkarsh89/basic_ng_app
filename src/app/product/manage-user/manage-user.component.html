@@ -1,0 +1,53 @@
+<section class="my-5">
+    <h2 class="text-center text-primary">Manage User</h2>
+    <div class="row mx-4">
+        <div class="col-md-6">
+            <h3 class="text-primary my-4">Add Users</h3>
+            <form #manageUserForm="ngForm" (ngSubmit)="onSubmit(manageUserForm)">
+                <div class="mb-3">
+                    <label for="userId" class="form-label">User ID</label>
+                    <input type="text" class="form-control" id="userId" name="userId" ngModel aria-describedby="uniqueUser">
+                    <div id="uniqueUser" class="form-text">User ID should always be unique.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="userName" class="form-label">User Name</label>
+                    <input type="text" class="form-control" id="userName" name="userName" ngModel>
+                </div>
+                <div class="mb-3">
+                    <label for="userExpense" class="form-label">User Expense</label>
+                    <input type="text" class="form-control" id="userExpense" name="userExpense" ngModel>
+                </div>
+                <div class="d-flex">
+                    <button type="submit" class="btn {{editMode ? 'btn-warning' : 'btn-primary'}} ">{{editMode ? 'Update User' : 'Add User'}}</button>
+                    <button type="submit" class="btn btn-success mx-3">Save User</button>
+                    <button type="submit" class="btn btn-warning">Delete User</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-primary my-4">Listed Users</h3>
+            <table class="table table-hover mt-5">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Expense</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let user of usersList; index as i">
+                    <tr>
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{user.userId}}</td>
+                        <td>{{user.userName}}</td>
+                        <td>{{user.userExpense | currency: 'INR'}}</td>
+                        <td><button (click)="setValueOnEdit(user)" class="btn btn-sm btn-warning">Edit</button></td>
+                        <td><button (click)="deleteUser(user.uniqueKey)" class="btn btn-sm btn-danger">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
