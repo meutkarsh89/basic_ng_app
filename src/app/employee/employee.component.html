@@ -1,0 +1,43 @@
+<section class="my-5">
+    <h2 class="text-center text-primary mb-5">Employees</h2>
+    <div class="row mx-5">
+        <ng-container *ngFor="let employee of employees; index as i">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="../../assets/color-profile.jpg" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{employee.uname}}</h5>
+                          <section class="d-flex mb-2">
+                            <div>Designation: </div>
+                            <strong class="ms-2">{{employee.designation}}</strong>
+                          </section>
+                          <section class="d-flex mb-2">
+                            <div>Department: </div>
+                            <strong class="ms-2">{{employee.department}}</strong>
+                          </section>
+                          <section class="d-flex mb-2">
+                            <div>Status: </div>
+                            <span class="ms-2 badge bg-primary">{{employee.status}}</span>
+                          </section>
+                          <section class="d-flex  mt-4">
+                            <button class="btn btn-outline-primary" [routerLink]="employee.uniqueKey">Add User</button>
+                            <button class="btn btn-outline-danger mx-3"> Close
+                                <!-- <i class="fa-solid fa-xmark"></i> -->
+                                <!-- <i class="fa-solid fa-house"></i> -->
+                                <!-- <fa-icon [icon]="faXmark></fa-icon> -->
+                            </button>
+                          </section>
+                          <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                          <p class="card-text mt-1"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </ng-container>
+    </div>
+</section>

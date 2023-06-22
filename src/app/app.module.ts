@@ -54,6 +54,8 @@ import { CardsModule } from './cards/cards.module';
 import { ManageProductComponent } from './product/manage-product/manage-product.component';
 import { ManageUserComponent } from './product/manage-user/manage-user.component';
 import { ProductServiceService } from './product/services/pServices/product-service.service';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +103,9 @@ import { ProductServiceService } from './product/services/pServices/product-serv
     TempFormComponent,
     ReactiveFormComponent,
     ManageProductComponent,
-    ManageUserComponent
+    ManageUserComponent,
+    EmployeeComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -109,7 +113,7 @@ import { ProductServiceService } from './product/services/pServices/product-serv
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CardsModule
+    CardsModule,
   ],
   providers: [DesignUtilityService, ProductServiceService],
   bootstrap: [AppComponent]

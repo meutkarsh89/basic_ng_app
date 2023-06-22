@@ -4,6 +4,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
 import { DecoratorsComponent } from './decorators/decorators.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeComponent } from './employee/employee.component';
 import { FilterPipeComponent } from './filter-pipe/filter-pipe.component';
 import { HomeComponent } from './home/home.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
@@ -44,6 +46,10 @@ const routes: Routes = [
   {path: 'reactive-form', component: ReactiveFormComponent},
   {path: 'manage-product', component: ManageProductComponent},
   {path: 'manage-user', component: ManageUserComponent},
+  {path: 'employee',  children: [
+    {path: '', component: EmployeeComponent},
+    {path: ':id', component: EmployeeDetailComponent}
+  ]},
   {path:'**', component:PageNotFoundComponent}
 ];
 

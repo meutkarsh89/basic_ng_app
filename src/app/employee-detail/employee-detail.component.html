@@ -1,0 +1,53 @@
+<section class="my-5">
+    <h2 class="text-center text-primary mb-5">Employee Details</h2>
+    <div class="row mx-5">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div *ngIf="userDetail" class="card">
+                <img src="../../assets/color-profile.jpg" class="mx-auto w-50 card-img-top" alt="color-profile">
+                <span class="edit-pos">
+                    <button type="button" class="btn btn-outline-danger" routerLink="./" [queryParams]="{edit:true}">Edit</button>
+                </span>
+                <div class="card-body">
+                    <form #empForm="ngForm" (ngSubmit)="submitForm(empForm)">
+                        <div class="row">
+                            <div class="col-md-6 mb-5">
+                                <label for="userName" class="mb-3">Name</label>
+                                <h3 *ngIf="!editMode" class="text-capitalize text-primary">{{userDetail.uname}}</h3>
+                                <input *ngIf="editMode" type="text" id="userName" class="form-control" name="uname" [(ngModel)]="userDetail.uname">
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <label for="designation" class="mb-3">Designation</label>
+                                <h3 *ngIf="!editMode" class="text-capitalize text-primary">{{userDetail.designation}}</h3>
+                                <input *ngIf="editMode" type="text" id="designation" class="form-control" name="designation" [(ngModel)]="userDetail.designation">
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <label for="department" class="mb-3">Department</label>
+                                <h3 *ngIf="!editMode" class="text-capitalize text-primary">{{userDetail.department}}</h3>
+                                <input *ngIf="editMode" type="text" id="department" class="form-control" name="department" [(ngModel)]="userDetail.department">       
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <label for="status" class="mb-3">Status</label>
+                                <h3 *ngIf="!editMode" class="text-capitalize text-primary">{{userDetail.status}}</h3>
+                                <input *ngIf="editMode" type="text" id="status" class="form-control" name="status" [(ngModel)]="userDetail.status">
+                            </div>
+                            <div *ngIf="!editMode" class="col-md-12">
+                                <button class="btn btn-outline-success" routerLink="../">Back to Gallery</button>
+                            </div>
+                            <div *ngIf="editMode" class="col-md-12 d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="button" class="btn btn-danger ms-2" routerLink="./">Cancel</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            <div *ngIf="!userDetail" class="text-center">
+                <div class="spinner-grow" style="width: 5rem; height: 5rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
